@@ -2,9 +2,12 @@
 
 public class Shots extends GameObject {
 
-	Shots(String image, int x, int y, int width, int height,int speedx, int speedy){
-		super(String image, int x, int y, int width, int height, int speedx, int speedy);
+	
+	public Shots(int x, int y, int width, int heigth, String imagePath, int speedx, int speedy) {
+		super(x, y, width, heigth, imagePath, speedx, speedy);
 				
 	}
+
+	
 	
 }
