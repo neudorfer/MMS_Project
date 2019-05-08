@@ -68,7 +68,7 @@ public class ShotManagement {
 				{
 					
 					enemyShots.remove(shot);
-					explosions.add(new GameObject(a.getShip.getX(),a.getShip.getY(),17,17,"/explosion.png",0,0));
+					explosions.add(new Explosion(a.getShip.getX() ,a.getShip.getY(),17,17,"/explosion.png",0,0));
 										
 				}
 						
@@ -116,7 +116,7 @@ public class ShotManagement {
 		
 	public void start() { // sets the walls
 		
-		walls.add(new Wall(50,50,300,100,"/enemyshot.png", 3));
+		walls.add(new Wall(50,50,100,30,"/wall.png", 3));
 				
 	}
 	
