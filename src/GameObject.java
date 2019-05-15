@@ -1,4 +1,4 @@
-
+import java.awt.Image;
 
 public class GameObject {
 
@@ -9,7 +9,7 @@ public class GameObject {
 	private String imagePath;
 	private int speedx;
 	private int speedy;
-	
+	private Image image;
 
 	public GameObject(int x, int y, int width, int heigth, String imagePath, int speedx, int speedy) {
 		super();
@@ -17,7 +17,8 @@ public class GameObject {
 		this.y = y;
 		this.width = width;
 		this.heigth = heigth;
-		this.imagePath = imagePath;
+		this.imagePath=imagePath;
+		image = ImageLoader.loadImage(imagePath);
 		this.speedx = speedx;
 		this.speedy = speedy;
 	}
@@ -67,12 +68,6 @@ public class GameObject {
 		return imagePath;
 	}
 
-
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
-
-
 	public int getSpeedx() {
 		return speedx;
 	}
@@ -91,6 +86,13 @@ public class GameObject {
 	public void setSpeedy(int speedy) {
 		this.speedy = speedy;
 	}
+	
+	public void update() {
 		
+	}
+
+	public Image getImage() {
+		return image;
+	}
 	
 }
