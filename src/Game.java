@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -15,22 +17,26 @@ import javax.swing.JPanel;
 
 public class Game  {
 	private final int WIDTH = 600;
-	private final int HEIGTH = 600;
+	private final int HEIGHT = 600;
 	final GamePanel gp;
 	
 	private ShotManagement shotManagement;
 	private EnemyManagement enemyManagement;
+	private Ship ship;
 
 	public Game() {
-		gp = new GamePanel(WIDTH,HEIGTH, this);
+		gp = new GamePanel(WIDTH,HEIGHT, this);
 		initComponentes();
 	}
 
+	private void initShip() {
+		ship = new Ship(200,500,25,25,"images/ship.png",0,0);
+	}
+	
 	private void initComponentes() {
 		
 		JFrame frame = new JFrame("Space Invaders");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		final JPanel buttonPanel = new JPanel();
 		buttonPanel.setOpaque(false);
 		
@@ -76,12 +82,13 @@ public class Game  {
 		// Add START-/STOP-Buttons to ButtonPanel
 		buttonPanel.add(startButton);
 		buttonPanel.add(stopButton);
-		
 		// Add ButtonPanel + GamePanel to JFrame
 		frame.add(gp);
 		frame.add(buttonPanel, BorderLayout.SOUTH);
-		
+		frame.addKeyListener(new ShipListener());
 		frame.pack();
+		
+		frame.setFocusable(true);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
@@ -103,6 +110,7 @@ public class Game  {
 	private void initTestLevel() {
 		gp.clearGameObjects();
 		
+		initShip();
 		TestGameObject testObject1 = new TestGameObject(50,50,27,14,"/images/testImage.png",1,0);
 		TestGameObject testObject2 = new TestGameObject(50,100,27,14,"/images/testImage.png",2,0);
 		TestGameObject testObject3 = new TestGameObject(50,150,27,14,"/images/testImage.png",3,0);
@@ -124,6 +132,7 @@ public class Game  {
 		gp.addGameObject(testObject8);
 		gp.addGameObject(testObject9);
 		gp.addGameObject(testObject0);
+		gp.addGameObject(ship);
 	}
 
 	public ShotManagement getShotManagement() {
@@ -147,8 +156,28 @@ public class Game  {
 		return new ArrayList<GameObject>();
 	}
 	
-	public GameObject getShip() {
+	public Ship getShip() {
 		//TODO: return the actual Ship
-		return new Ship();
+		return ship;
+	}
+	
+	// return the width of the GamePanel
+	public int getWidth() {
+		return WIDTH;
+	}
+	
+	// KeyListener for Ship actions like movement and shooting
+	private class ShipListener extends KeyAdapter {
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			ship.keyPressed(e);
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			ship.keyReleased(e);
+		}
+		
 	}
 }

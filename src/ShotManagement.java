@@ -53,7 +53,6 @@ public class ShotManagement {
 		
 		}
 		
-		
 		for(GameObject shot : enemyShots) {
 			shot.setX(shot.getX()+shot.getSpeedx());
 			shot.setY(shot.getY()+shot.getSpeedy());
@@ -61,14 +60,14 @@ public class ShotManagement {
 			// look for playership collision
 			
 			
-				if (shot.getX() < a.getShip.getX() + a.getShip.getWidth() &&
-						shot.getX() + shot.getWidth() > a.getShip.getX() &&
-						shot.getY() < a.getShip.getY() + a.getShip.getHeigth() &&
-						shot.getY() + shot.getHeigth() > a.getShip.getY())
+				if (shot.getX() < a.getShip().getX() + a.getShip().getWidth() &&
+						shot.getX() + shot.getWidth() > a.getShip().getX() &&
+						shot.getY() < a.getShip().getY() + a.getShip().getHeigth() &&
+						shot.getY() + shot.getHeigth() > a.getShip().getY())
 				{
 					
 					enemyShots.remove(shot);
-					explosions.add(new Explosion(a.getShip.getX() ,a.getShip.getY(),17,17,"/explosion.png",0,0));
+					explosions.add(new Explosion(a.getShip().getX() ,a.getShip().getY(),17,17,"/explosion.png",0,0));
 										
 				}
 						
@@ -92,10 +91,10 @@ public class ShotManagement {
 		}
 				
 		
-		// create new playerhots
+		// create new playershots
 		
-		if(a.getShip().isShooting == true) {
-			GameObject newShot = new Shot(a.getShip().getX()+20,a.getShip().getY(),7,47,"/playershot.png",0,10 );
+		if(a.getShip().isShooting() == true) {
+			GameObject newShot = new Shots(a.getShip().getX()+20,a.getShip().getY(),7,47,"/playershot.png",0,10 );
 			playerShots.add(newShot);
 					
 		}
