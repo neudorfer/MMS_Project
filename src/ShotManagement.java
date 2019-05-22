@@ -29,7 +29,7 @@ public class ShotManagement {
 				{
 					enemy.setDead();
 					playerShots.remove(shot);
-					explosions.add(new GameObject(a.getEnemies.getX(),a.getEnemies.getY(),17,17,"/explosion.png",0,0));
+					explosions.add(new GameObject(a.getEnemies.getX(),a.getEnemies.getY(),17,17,"/explosion.gif",0,0));
 										
 				}
 						
@@ -68,7 +68,7 @@ public class ShotManagement {
 				{
 					
 					enemyShots.remove(shot);
-					explosions.add(new Explosion(a.getShip.getX() ,a.getShip.getY(),17,17,"/explosion.png",0,0));
+					explosions.add(new Explosion(a.getShip.getX() ,a.getShip.getY(),17,17,"/explosion.gif",0,0));
 										
 				}
 						
