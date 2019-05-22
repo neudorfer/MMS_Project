@@ -2,13 +2,13 @@ import java.awt.Image;
 
 public class GameObject {
 
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	private int width;
 	private int heigth;
 	private String imagePath;
-	private int speedx;
-	private int speedy;
+	protected int speedx;
+	protected int speedy;
 	private Image image;
 
 	public GameObject(int x, int y, int width, int heigth, String imagePath, int speedx, int speedy) {
