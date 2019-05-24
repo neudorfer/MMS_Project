@@ -1,5 +1,5 @@
 
-
+import java.util.*;
 
 public class EnemyManagement {
 	private ArrayList<Enemy> enemys;
@@ -23,13 +23,13 @@ public class EnemyManagement {
 	public void update(Enemy enemy) {
 		//Set last shooting enemy false
 		for(Enemy enemy : a.getEnemies()) {
-			if (enemy.getShooting == true) {
+			if (enemy.getShooting() == true) {
 				enemy.setShooting(false);			
 			}
 		}
 		//Set new shooting enemy
 		Random rand = new Random();
 		int n = rand.nextInt(15);
-		enemys[n].setShooting(true);
+		enemys.get(n).setShooting(true);
 	}
 }
