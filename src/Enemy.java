@@ -23,11 +23,11 @@ public class Enemy extends GameObject {
 		return alive;
 	}
 	
-	public boolean setShooting(boolean status) {
+	public void setShooting(boolean status) {
 		shooting = status;
 	}
 	
-	public boolean setAlive() {
+	public void setAlive() {
 		alive = false;
 	}
 	
