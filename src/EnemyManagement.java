@@ -20,23 +20,23 @@ public class EnemyManagement {
 		alive2 =  new ArrayList<Enemy>();
 		alive1 =  new ArrayList<Enemy>();
 
-		int width=17;
-		int heigth=17;
+		int width=40;
+		int heigth=37;
 		String imagePath = "/enemy.png";
 		int speedx=1;
 		int speedy=0;
 		Enemy newEnemy;
 
 		for (int i = 0; i<COUNT_ENEMY_PER_ROW ; i++) {
-			newEnemy = new Enemy(5+i*20, 0, width, heigth, imagePath, speedx, speedy);
+			newEnemy = new Enemy(5+i*40, 0, width, heigth, imagePath, speedx, speedy);
 			enemys1.add(newEnemy);
 		}
 		for (int i = 0; i<COUNT_ENEMY_PER_ROW ; i++) { 
-			newEnemy = new Enemy(5+i*20, 20, width, heigth, imagePath, speedx, speedy);
+			newEnemy = new Enemy(5+i*40, 50, width, heigth, imagePath, speedx, speedy);
 			enemys2.add(newEnemy);
 		}
 		for (int i = 0; i<COUNT_ENEMY_PER_ROW ; i++) { 
-			newEnemy = new Enemy(5+i*20, 40, width, heigth, imagePath, speedx, speedy);
+			newEnemy = new Enemy(5+i*40, 50, width, heigth, imagePath, speedx, speedy);
 			enemys3.add(newEnemy);
 		}
 	}
