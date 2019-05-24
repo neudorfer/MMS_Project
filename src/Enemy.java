@@ -35,4 +35,10 @@ public class Enemy extends GameObject {
 		x += speedx;
 		y += speedy;
 	}
+
+	public void changeDirection() {
+		speedx = speedx *-1;
+		this.y += 5;
+	}
+
 }

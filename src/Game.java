@@ -151,11 +151,22 @@ public class Game  {
 		this.enemyManagement = enemyManagement;
 	}
 	
-	public ArrayList<GameObject> getEnemies() {
-		//TODO: return the actual Enemies
-		return new ArrayList<GameObject>();
-	}
+	public ArrayList<Enemy> getEnemies() {
+		ArrayList<Enemy> all = new ArrayList<Enemy>();
+		all.addAll(enemyManagement.getEnemys1());
+		all.addAll(enemyManagement.getEnemys2());
+		all.addAll(enemyManagement.getEnemys3());
+		return all;
 	
+	}
+	public ArrayList<Enemy> getEnemiesAlive() {
+		ArrayList<Enemy> all = new ArrayList<Enemy>();
+		all.addAll(enemyManagement.getAlive1());
+		all.addAll(enemyManagement.getAlive2());
+		all.addAll(enemyManagement.getAlive3());
+		return all;
+	
+	}
 	public Ship getShip() {
 		//TODO: return the actual Ship
 		return ship;

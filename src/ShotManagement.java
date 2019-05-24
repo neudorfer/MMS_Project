@@ -35,7 +35,7 @@ public class ShotManagement {
 				{
 					enemy.setAlive();
 					playerShots.remove(shot);
-					explosions.add(new GameObject(a.getEnemies.getX(),a.getEnemies.getY(),17,17,"/explosion.gif",0,0));
+					explosions.add(new Explosion(enemy.getX(),enemy.getY(),17,17,"/explosion.gif"));
 										
 				}
 						
@@ -79,9 +79,9 @@ public class ShotManagement {
 					
 					enemyShots.remove(shot);
 
-					explosions.add(new Explosion(a.getShip().getX() ,a.getShip().getY(),17,17,"/explosion.gif",0,0));
+					explosions.add(new Explosion(a.getShip().getX() ,a.getShip().getY(),17,17,"/explosion.gif"));
 
-					explosions.add(new Explosion(a.getShip().getX() ,a.getShip().getY(),17,17,"/explosion.png",0,0));
+					explosions.add(new Explosion(a.getShip().getX() ,a.getShip().getY(),17,17,"/explosion.png"));
 
 										
 				}
@@ -117,7 +117,7 @@ public class ShotManagement {
 		
 		// create new Enemyshots
 		
-		for(Enemy enemy : a.getEnemies()) {
+		for(Enemy enemy : a.getEnemiesAlive()) {
 			if(enemy.getShooting() == true) {
 				GameObject newShot = new Shots(enemy.getX()+20,enemy.getY()+20,17,17,"/enemyshot.png",0,10 );
 				enemyShots.add(newShot);
