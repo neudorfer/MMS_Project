@@ -67,7 +67,27 @@ public class EnemyManagement {
 		}
 
 		counterShoot++;
+        
+		alive3.clear();
+		alive2.clear();
+		alive1.clear();
+		
+		Stream<Enemy> stream3 = enemys3.stream();
+		stream3.filter(x -> x.getAlive());
+		stream3.forEach(x -> alive3.add(x));
 
+		Stream<Enemy> stream2 = enemys3.stream();
+		stream2.filter(x -> x.getAlive());
+		stream2.forEach(x -> alive2.add(x));
+
+		Stream<Enemy> stream1 = enemys3.stream();
+		stream1.filter(x -> x.getAlive());
+		stream1.forEach(x -> alive1.add(x));
+		
+		
+		
+		
+		
 		if(counterShoot == 75) {
 			//			for (int i = 0; i<COUNT_ENEMY_PER_ROW ; i++) { //um die abfrage zu verringern alle enemy shooting false setzen, nicht nötig, da ich den schießenenden gegner nach den schuss auf false setze
 			//				enemys1.get(i).setShooting(false);
@@ -78,18 +98,6 @@ public class EnemyManagement {
 			//neuen schieÃŸenden enemy setzten lebt NR n in der ersten Reihe dann er sonst reihe 2 oder reihe 1
 
 
-
-			Stream<Enemy> stream3 = enemys3.stream();
-			stream3.filter(x -> x.getAlive());
-			stream3.forEach(x -> alive3.add(x));
-
-			Stream<Enemy> stream2 = enemys3.stream();
-			stream2.filter(x -> x.getAlive());
-			stream2.forEach(x -> alive2.add(x));
-
-			Stream<Enemy> stream1 = enemys3.stream();
-			stream1.filter(x -> x.getAlive());
-			stream1.forEach(x -> alive1.add(x));
 
 
 			Random rand = new Random();
