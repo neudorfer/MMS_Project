@@ -86,8 +86,6 @@ public class EnemyManagement {
 		
 		
 		
-		
-		
 		if(counterShoot == 75) {
 			//			for (int i = 0; i<COUNT_ENEMY_PER_ROW ; i++) { //um die abfrage zu verringern alle enemy shooting false setzen, nicht nötig, da ich den schießenenden gegner nach den schuss auf false setze
 			//				enemys1.get(i).setShooting(false);
@@ -96,9 +94,6 @@ public class EnemyManagement {
 			//			}
 
 			//neuen schieÃŸenden enemy setzten lebt NR n in der ersten Reihe dann er sonst reihe 2 oder reihe 1
-
-
-
 
 			Random rand = new Random();
 
